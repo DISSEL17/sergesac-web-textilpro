@@ -4,307 +4,316 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERGESAC | Especialistas en Textilería y Confección Industrial Corporativa</title>
-    <!-- Importación de Tailwind CSS para el diseño ágil y responsivo -->
+    <!-- Importación de Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Estilos personalizados para las animaciones -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-100 text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-indigo-500 selection:text-white">
 
-    <!-- 1. BARRA DE NAVEGACIÓN -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <!-- 1. BARRA DE NAVEGACIÓN (Dark Premium) -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800 shadow-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-200">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-300">
                     S
                 </div>
-                <span class="text-xl font-black tracking-tight bg-gradient-to-r from-slate-900 to-indigo-950 bg-clip-text text-transparent">
-                    SERGE<span class="text-indigo-600">SAC</span>
+                <span class="text-xl font-black tracking-tight text-white">
+                    SERGE<span class="text-indigo-500">SAC</span>
                 </span>
             </div>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="#inicio" class="hover:text-indigo-600 transition-colors">Inicio</a>
-                <a href="#nosotros" class="hover:text-indigo-600 transition-colors">Nosotros</a>
-                <a href="#catalogo" class="hover:text-indigo-600 transition-colors">Catálogo</a>
-                <a href="#cotizar" class="hover:text-indigo-600 transition-colors">Contacto</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-indigo-400 hover:-translate-y-0.5 transition-all">Inicio</a>
+                <a href="#nosotros" class="hover:text-indigo-400 hover:-translate-y-0.5 transition-all">Nosotros</a>
+                <a href="#catalogo" class="hover:text-indigo-400 hover:-translate-y-0.5 transition-all">Catálogo</a>
+                <a href="#cotizar" class="hover:text-indigo-400 hover:-translate-y-0.5 transition-all">Contacto</a>
             </nav>
 
             <div>
-                <a href="#cotizar" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md shadow-indigo-100 transition-all">
+                <a href="#cotizar" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-indigo-600/30 transition-all duration-300 hover:-translate-y-1">
                     Cotizar Ahora
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 2. SECCIÓN PRINCIPAL (HERO) -->
-    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-indigo-950 to-slate-900 text-white py-24 lg:py-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-400/20 px-3.5 py-1.5 rounded-full text-indigo-300 text-sm font-medium">
-                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-                    Manufactura Textil a Gran Escala
+    <!-- 2. SECCIÓN PRINCIPAL HERO (Fondo Radial Corporativo) -->
+    <section id="inicio" class="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
+        <!-- Fondo degradado elegante -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/40 via-slate-950 to-slate-950 -z-10"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-30 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 text-center lg:text-left reveal active">
+                <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-full text-indigo-300 text-sm font-semibold backdrop-blur-sm">
+                    <span class="flex h-2.5 w-2.5 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
+                    </span>
+                    Tu aliado estratégico en manufactura
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-                    Vestimos la Identidad y Seguridad de tu Empresa
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
+                    Vestimos el orgullo de tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">equipo de trabajo</span>
                 </h1>
-                <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
-                    En SERGESAC somos especialistas en la confección industrial y corporativa de uniformes. Ofrecemos variedad, durabilidad y altos estándares de calidad adaptados a las necesidades de cada sector.
+                <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Diseñamos y confeccionamos uniformes corporativos e industriales con altos estándares de calidad. Comodidad, durabilidad y atención humana para empresas que buscan lo mejor.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                    <a href="#catalogo" class="bg-white text-slate-900 hover:bg-slate-100 px-6 py-3.5 rounded-xl font-bold transition-all text-center">
-                        Ver Catálogo de Uniformes
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#catalogo" class="bg-indigo-600 text-white hover:bg-indigo-500 px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-indigo-600/20 hover:-translate-y-1 hover:shadow-indigo-600/40 text-center flex items-center justify-center gap-2 border border-indigo-500">
+                        Ver Catálogo
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </a>
                 </div>
             </div>
-            <div class="relative max-w-md mx-auto lg:max-w-none w-full aspect-video bg-slate-800 border border-slate-700/50 rounded-2xl flex items-center justify-center text-slate-500 text-sm font-mono shadow-2xl">
-                [ Espacio para foto real de uniformes SERGESAC ]
+            
+            <div class="relative max-w-md mx-auto lg:max-w-none w-full aspect-square lg:aspect-[4/3] reveal active animate-float">
+                <div class="w-full h-full bg-slate-900 border border-slate-700/50 rounded-[2.5rem] flex items-center justify-center text-slate-500 text-sm font-mono shadow-2xl overflow-hidden relative group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    [ Foto Hero: Empleados sonriendo con uniformes SERGESAC ]
+                </div>
+                <!-- Badge flotante premium -->
+                <div class="absolute -bottom-6 -left-6 bg-slate-800 p-5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4 animate-bounce backdrop-blur-md" style="animation-duration: 4s;">
+                    <div class="bg-indigo-500/20 p-2 rounded-full text-indigo-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-slate-200">Atención B2B</p>
+                        <p class="text-xs text-slate-400">Rápida y personalizada</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. SECCIÓN NOSOTROS / POR QUÉ ELEGIRNOS -->
-    <section id="nosotros" class="py-24 bg-white border-b border-slate-100">
+    <!-- 3. SECCIÓN NOSOTROS (Gris Pizarra Claro) -->
+    <section id="nosotros" class="py-24 bg-gradient-to-b from-slate-50 to-slate-100 border-b border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 
-                <!-- Columna de Texto -->
-                <div class="space-y-8">
+                <div class="relative reveal order-2 lg:order-1">
+                    <div class="aspect-[4/5] bg-slate-200 rounded-[3rem] overflow-hidden shadow-xl flex items-center justify-center relative group transition-transform duration-500 hover:scale-[1.02] border border-slate-300/50">
+                        <span class="text-slate-500 font-mono text-sm z-10 text-center px-4">[ Detalle de costura impecable ]</span>
+                    </div>
+                </div>
+
+                <div class="space-y-10 reveal order-1 lg:order-2">
                     <div>
-                        <span class="text-indigo-600 font-bold tracking-wider uppercase text-sm">Sobre SERGESAC</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 mt-2 mb-4">Innovación y Compromiso en Manufactura Textil</h2>
-                        <p class="text-lg text-slate-600">
-                            En SERGESAC somos una empresa con una visión moderna de la confección industrial y corporativa. Entendemos que el uniforme es la primera línea de identidad y seguridad de tu equipo. Nos dedicamos a brindar soluciones textiles con acabados impecables, atención altamente personalizada y un estricto control de calidad.
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Más que proveedores, somos parte de tu cadena de valor.</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Entendemos los retos del área de logística y compras. Por eso, en SERGESAC simplificamos el proceso de dotación de uniformes brindando transparencia, muestras físicas previas y cumplimiento estricto de entregas.
                         </p>
                     </div>
 
                     <div class="space-y-6">
-                        <!-- Beneficio 1 -->
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold">
-                                ✓
+                        <div class="flex gap-5 p-4 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-slate-200 group">
+                            <div class="flex-shrink-0 w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors shadow-inner">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-slate-900">Atención a Medida</h4>
-                                <p class="text-slate-600 mt-1">Asesoría directa y cercana para entender las necesidades específicas de tu sector y diseñar prendas que ofrezcan máxima comodidad.</p>
+                                <h4 class="text-xl font-bold text-slate-900">Adaptabilidad Total</h4>
+                                <p class="text-slate-600 mt-2">Ajustamos los diseños a los requerimientos de seguridad de tu sector industrial.</p>
                             </div>
                         </div>
-                        <!-- Beneficio 2 -->
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold">
-                                ✓
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900">Telas de Alta Calidad</h4>
-                                <p class="text-slate-600 mt-1">Seleccionamos rigurosamente materiales duraderos que cumplen con los estándares de seguridad, protección y resistencia al desgaste.</p>
-                            </div>
-                        </div>
-                        <!-- Beneficio 3 -->
-                        <div class="flex gap-4">
-                            <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold">
-                                ✓
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900">Personalización Detallada</h4>
-                                <p class="text-slate-600 mt-1">Bordados y estampados de alta definición para que la identidad visual de tu marca destaque en cada prenda institucional.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Columna de Imagen -->
-                <div class="relative">
-                    <div class="aspect-[4/5] bg-slate-800 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center relative group">
-                        <div class="absolute inset-0 bg-indigo-900/20 mix-blend-multiply"></div>
-                        <span class="text-slate-400 font-mono text-sm z-10 text-center px-4">[ Fotografía de Alta Calidad: Detalles de Costura / Bordado SERGESAC ]</span>
-                    </div>
-                    
-                    <!-- Tarjeta flotante de Calidad -->
-                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden sm:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            </div>
-                            <div class="text-sm font-bold text-slate-700 leading-tight">Calidad<br>Garantizada</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. CATÁLOGO DINÁMICO DE UNIFORMES -->
-    <section id="catalogo" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">Nuestro Catálogo de Confección</h2>
-            <p class="text-lg text-slate-600">Soluciones textiles adaptadas a los requerimientos de cada industria.</p>
-        </div>
-
-        <!-- Botones de Filtro -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-            <button onclick="filtrarCatalogo('todos')" class="filtro-btn activo px-6 py-2 rounded-full font-semibold border-2 border-indigo-600 bg-indigo-600 text-white transition-all">Todos</button>
-            <button onclick="filtrarCatalogo('corporativo')" class="filtro-btn px-6 py-2 rounded-full font-semibold border-2 border-slate-200 text-slate-600 hover:border-indigo-600 hover:text-indigo-600 transition-all">Administrativo</button>
-            <button onclick="filtrarCatalogo('industrial')" class="filtro-btn px-6 py-2 rounded-full font-semibold border-2 border-slate-200 text-slate-600 hover:border-indigo-600 hover:text-indigo-600 transition-all">Industrial y Operativo</button>
-            <button onclick="filtrarCatalogo('sanidad')" class="filtro-btn px-6 py-2 rounded-full font-semibold border-2 border-slate-200 text-slate-600 hover:border-indigo-600 hover:text-indigo-600 transition-all">Sanidad y Servicios</button>
-        </div>
-
-        <!-- Cuadrícula de Productos -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-productos">
-            
-            <!-- Producto: Corporativo 1 -->
-            <div class="producto-item corporativo bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-                <div class="aspect-square bg-slate-100 relative overflow-hidden">
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-105 transition-transform">
-                        [ Foto Camisa Oxford ]
-                    </div>
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2 block">Línea Administrativa</span>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Camisas Oxford Corporativas</h3>
-                    <p class="text-slate-600 text-sm mb-4">Corte clásico y slim fit. Tela transpirable ideal para el trabajo de oficina y atención al cliente.</p>
-                </div>
-            </div>
-
-            <!-- Producto: Industrial 1 -->
-            <div class="producto-item industrial bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-                <div class="aspect-square bg-slate-100 relative overflow-hidden">
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-105 transition-transform">
-                        [ Foto Overol Drill ]
-                    </div>
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Línea Industrial</span>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Overol Mameluco en Drill</h3>
-                    <p class="text-slate-600 text-sm mb-4">Alta resistencia a la fricción con cintas reflectivas 3M integradas para máxima seguridad en planta.</p>
-                </div>
-            </div>
-
-            <!-- Producto: Sanidad 1 -->
-            <div class="producto-item sanidad bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-                <div class="aspect-square bg-slate-100 relative overflow-hidden">
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-105 transition-transform">
-                        [ Foto Uniforme Médico ]
-                    </div>
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2 block">Sanidad y Servicios</span>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Conjunto Antifluido Scrubs</h3>
-                    <p class="text-slate-600 text-sm mb-4">Tela con tecnología repelente a líquidos, cómoda y de fácil lavado para personal de salud o limpieza.</p>
-                </div>
-            </div>
-
-            <!-- Producto: Industrial 2 -->
-            <div class="producto-item industrial bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group">
-                <div class="aspect-square bg-slate-100 relative overflow-hidden">
-                    <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-105 transition-transform">
-                        [ Foto Chaleco Geólogo ]
-                    </div>
-                </div>
-                <div class="p-6">
-                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2 block">Línea Industrial</span>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Chaleco Tipo Geólogo</h3>
-                    <p class="text-slate-600 text-sm mb-4">Múltiples bolsillos funcionales, malla transpirable interna y costuras reforzadas para trabajo en campo.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 5. SECCIÓN DE CONTACTO Y COTIZACIONES (AGREGADA) -->
-    <section id="cotizar" class="bg-slate-900 text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Contacto y Cotizaciones</h2>
-                <p class="text-lg text-slate-400">Comunícate con nuestros asesores corporativos o envíanos tu requerimiento.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
-                
-                <!-- Columna Izquierda: Información Directa -->
-                <div class="space-y-8">
-                    <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-lg">
-                        <h3 class="text-xl font-bold mb-8 text-indigo-400">Información Directa</h3>
                         
-                        <div class="space-y-6">
-                            <!-- Dirección -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center shrink-0">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-200 text-lg">Planta y Oficina Central</h4>
-                                    <p class="text-slate-400 text-sm mt-1 leading-relaxed">Parque Industrial, Villa El Salvador<br>Lima, Perú</p>
-                                </div>
+                        <div class="flex gap-5 p-4 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-slate-200 group">
+                            <div class="flex-shrink-0 w-14 h-14 bg-slate-200 text-slate-700 rounded-2xl flex items-center justify-center group-hover:bg-slate-800 group-hover:text-white transition-colors shadow-inner">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             </div>
-
-                            <!-- Teléfono -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center shrink-0">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-200 text-lg">Línea de Ventas B2B</h4>
-                                    <p class="text-slate-400 text-sm mt-1 leading-relaxed">+51 999 999 999<br>Atención: Lun - Sáb (8:00 AM - 6:00 PM)</p>
-                                </div>
-                            </div>
-
-                            <!-- Correo -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center shrink-0">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-slate-200 text-lg">Correo Electrónico</h4>
-                                    <p class="text-slate-400 text-sm mt-1 leading-relaxed">ventas@sergesac.pe<br>cotizaciones@sergesac.pe</p>
-                                </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900">Calidad Comprobada</h4>
+                                <p class="text-slate-600 mt-2">Telas resistentes a lavados industriales, fricción y decoloración.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Formulario de Cotización -->
-                <form class="bg-white text-slate-900 p-8 rounded-2xl shadow-xl space-y-5">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-6">Solicita una Muestra o Cotización</h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-slate-700">Razón Social *</label>
-                            <input type="text" required placeholder="Empresa S.A.C." class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all">
-                        </div>
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-slate-700">RUC *</label>
-                            <input type="text" required placeholder="Número de RUC" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-slate-700">Teléfono / Celular *</label>
-                            <input type="tel" required placeholder="Ej. 999 999 999" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all">
-                        </div>
-                        <div class="space-y-1.5">
-                            <label class="text-sm font-semibold text-slate-700">Correo Corporativo *</label>
-                            <input type="email" required placeholder="correo@empresa.com" class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all">
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="space-y-1.5">
-                        <label class="text-sm font-semibold text-slate-700">Línea de Interés</label>
-                        <select class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 bg-transparent transition-all">
-                            <option value="">Selecciona un rubro</option>
-                            <option value="corporativo">Línea Corporativa / Administrativa</option>
-                            <option value="industrial">Línea Industrial y Operativa</option>
-                            <option value="sanidad">Línea Sanidad y Servicios</option>
-                        </select>
-                    </div>
+    <!-- 4. CATÁLOGO DINÁMICO (Gris Ceniza para resaltar tarjetas) -->
+    <section id="catalogo" class="py-24 bg-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Catálogo de Confección</h2>
+                <p class="text-lg text-slate-600">Selecciona el sector de tu empresa para explorar nuestras líneas de producción.</p>
+            </div>
 
-                    <div class="space-y-1.5">
-                        <label class="text-sm font-semibold text-slate-700">Detalles del Pedido</label>
-                        <textarea rows="4" placeholder="Especifica cantidades, tallas aproximadas, si requieres bordado de logo o telas específicas." class="w-full border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"></textarea>
+            <!-- Botones de Filtro -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16 reveal">
+                <button onclick="filtrarCatalogo('todos')" class="filtro-btn activo px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide border-2 border-slate-800 bg-slate-800 text-white shadow-lg shadow-slate-400/30 transition-all hover:-translate-y-1">Todos</button>
+                <button onclick="filtrarCatalogo('corporativo')" class="filtro-btn px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide border-2 border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-800 transition-all hover:-translate-y-1 bg-white">Administrativo</button>
+                <button onclick="filtrarCatalogo('industrial')" class="filtro-btn px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide border-2 border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-800 transition-all hover:-translate-y-1 bg-white">Industrial</button>
+                <button onclick="filtrarCatalogo('sanidad')" class="filtro-btn px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wide border-2 border-slate-300 text-slate-600 hover:border-slate-800 hover:text-slate-800 transition-all hover:-translate-y-1 bg-white">Sanidad</button>
+            </div>
+
+            <!-- Cuadrícula de Productos -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10" id="grid-productos">
+                <!-- Producto 1 (Tarjeta Blanca para Resaltar) -->
+                <div class="producto-item corporativo bg-white border border-slate-200/60 rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-3 group reveal">
+                    <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-110 transition-transform duration-700">
+                            [ Foto Camisa Oxford ]
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Corporativo</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Camisas Oxford</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Corte clásico y slim fit. Tela transpirable ideal para el trabajo de oficina y atención al cliente.</p>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="producto-item industrial bg-white border border-slate-200/60 rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-3 group reveal" style="transition-delay: 100ms;">
+                    <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-110 transition-transform duration-700">
+                            [ Foto Overol Drill ]
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Industrial</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Overol Mameluco Drill</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Alta resistencia a la fricción con cintas reflectivas integradas para máxima seguridad en planta.</p>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="producto-item sanidad bg-white border border-slate-200/60 rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-3 group reveal" style="transition-delay: 200ms;">
+                    <div class="aspect-[4/3] bg-slate-100 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-sm group-hover:scale-110 transition-transform duration-700">
+                            [ Foto Uniforme Médico ]
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Sanidad</span>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">Conjunto Antifluido</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Tela con tecnología repelente a líquidos, cómoda y de fácil lavado para personal de salud o limpieza.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN DE CONTACTO (Dark Profesional) -->
+    <section id="cotizar" class="bg-slate-950 text-white py-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-indigo-900 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-800 rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">¿Listo para renovar la imagen de tu empresa?</h2>
+                <p class="text-lg text-slate-400">Nuestro equipo está listo para asesorarte. Contáctanos por el canal de tu preferencia.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+                
+                <div class="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 shadow-2xl flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-8 text-white">Estamos aquí para ayudarte</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-5 group">
+                            <div class="w-14 h-14 bg-slate-800 text-indigo-400 border border-slate-700 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200 text-lg">Visítanos</h4>
+                                <p class="text-slate-400 text-sm mt-1">Parque Industrial, Villa El Salvador, Lima</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5 group">
+                            <div class="w-14 h-14 bg-slate-800 text-indigo-400 border border-slate-700 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200 text-lg">Llámanos</h4>
+                                <p class="text-slate-400 text-sm mt-1">+51 941 963 144</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5 group">
+                            <div class="w-14 h-14 bg-slate-800 text-indigo-400 border border-slate-700 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200 text-lg">Escríbenos</h4>
+                                <p class="text-slate-400 text-sm mt-1">ventas@sergesac.pe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Formulario Suavizado y Completo -->
+                <form class="bg-white text-slate-900 p-10 rounded-[2.5rem] shadow-xl space-y-6 border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900">Solicitar Cotización</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Fila 1: Razón Social y RUC -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-sm font-semibold text-slate-600">Empresa (Razón Social) *</label>
+                                <input type="text" required placeholder="Ej. Constructora S.A.C." class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-sm font-semibold text-slate-600">RUC *</label>
+                                <input type="text" required placeholder="Número de RUC" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Fila 2: Celular y Correo -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-sm font-semibold text-slate-600">Celular *</label>
+                                <input type="tel" required placeholder="Ej. 941 963 144" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-sm font-semibold text-slate-600">Correo Corporativo *</label>
+                                <input type="email" required placeholder="correo@empresa.com" class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Fila 3: Línea de Interés -->
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-slate-600">Línea de Interés</label>
+                            <select class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all">
+                                <option value="">Selecciona un rubro</option>
+                                <option value="corporativo">Línea Corporativa / Administrativa</option>
+                                <option value="industrial">Línea Industrial y Operativa</option>
+                                <option value="sanidad">Línea Sanidad y Servicios</option>
+                            </select>
+                        </div>
+
+                        <!-- Fila 4: Detalles -->
+                        <div class="space-y-1.5">
+                            <label class="text-sm font-semibold text-slate-600">Detalles del Pedido</label>
+                            <textarea rows="3" placeholder="Detállanos cantidades, colores y modelos..." class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all resize-none"></textarea>
+                        </div>
                     </div>
 
                     <div class="pt-2">
-                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5">
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-1 text-lg">
                             Enviar Requerimiento
                         </button>
                     </div>
@@ -314,46 +323,62 @@
         </div>
     </section>
 
-    <!-- SCRIPT PARA FILTRAR EL CATÁLOGO -->
-    <script>
-        function filtrarCatalogo(categoria) {
-            const botones = document.querySelectorAll('.filtro-btn');
-            botones.forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600');
-                btn.classList.add('border-slate-200', 'text-slate-600');
-            });
-            event.target.classList.remove('border-slate-200', 'text-slate-600');
-            event.target.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
-
-            const productos = document.querySelectorAll('.producto-item');
-            productos.forEach(producto => {
-                if (categoria === 'todos' || producto.classList.contains(categoria)) {
-                    producto.style.display = 'block';
-                } else {
-                    producto.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
     <!-- 6. FOOTER -->
-    <footer class="bg-slate-950 text-slate-500 text-sm py-12 text-center">
-        <p>&copy; 2026 SERGESAC. Todos los derechos reservados. Confección Industrial Corporativa.</p>
+    <footer class="bg-black text-slate-500 text-sm py-10 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 SERGESAC. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a href="https://wa.me/51941963144?text=Hola%20SERGESAC,%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20de%20uniformes%20corporativos." 
        target="_blank" 
        rel="noopener noreferrer" 
-       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-lg shadow-green-500/30 transition-all hover:scale-110 flex items-center justify-center group"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all hover:scale-110 flex items-center justify-center group"
        aria-label="Contactar por WhatsApp">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <span class="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-40"></span>
+        <svg class="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.012c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
         </svg>
-        <span class="absolute right-16 bg-slate-900 text-white text-sm font-semibold px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            ¡Cotiza con nosotros!
-        </span>
     </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        function filtrarCatalogo(categoria) {
+            const botones = document.querySelectorAll('.filtro-btn');
+            botones.forEach(btn => {
+                btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-800', 'shadow-lg');
+                btn.classList.add('bg-white', 'border-slate-300', 'text-slate-600');
+            });
+            event.target.classList.remove('bg-white', 'border-slate-300', 'text-slate-600');
+            event.target.classList.add('bg-slate-800', 'text-white', 'border-slate-800', 'shadow-lg');
+
+            const productos = document.querySelectorAll('.producto-item');
+            productos.forEach(producto => {
+                if (categoria === 'todos' || producto.classList.contains(categoria)) {
+                    producto.style.display = 'block';
+                    producto.classList.remove('active');
+                    setTimeout(() => producto.classList.add('active'), 50);
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(element => { observer.observe(element); });
+        });
+    </script>
 
 </body>
 </html>
